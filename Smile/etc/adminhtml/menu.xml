@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Pilot_Smile::smile" title="Smile theme settings" module="Pilot_Smile" sortOrder="52" resource="Pilot_Smile::smile"/>
+        <add id="Pilot_Smile::index" title="Theme options" module="Pilot_Smile" sortOrder="10" action="pilot_smile/options" resource="Pilot_Smile::smile" parent="Pilot_Smile::smile"/>
+    </menu>
+</config>
+

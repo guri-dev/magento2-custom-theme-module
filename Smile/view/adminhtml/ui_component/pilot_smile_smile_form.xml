@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">pilot_smile_smile_form.smile_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Theme settings options</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save_and_continue" class="Pilot\smile\Block\Adminhtml\Smile\SaveAndContinueButton"/>
+            <!--<button name="save" class="Guri\smile\Block\Adminhtml\Location\SaveButton"/>
+            <button name="reset" class="Guri\smile\Block\Adminhtml\Location\ResetButton"/>
+            <button name="delete" class="Guri\smile\Block\Adminhtml\Location\DeleteButton"/>
+            <button name="back" class="Guri\smile\Block\Adminhtml\Location\BackButton"/>-->
+        </buttons>
+        <layout>
+            <navContainerName>left</navContainerName>
+            <type>tabs</type>
+        </layout>
+        <namespace>pilot_smile_smile_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>pilot_smile_smile_form.smile_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="smile_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="pilot_smile/smile/save"/>
+        </settings>
+        <dataProvider class="Pilot\Smile\Model\Options\DataProvider" name="smile_form_data_source">
+            <settings>
+                <requestFieldName>option_id</requestFieldName>
+                <primaryFieldName>option_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">General Information</item>
+            </item>
+        </argument>
+        <settings>
+            <label translate="true">General Information</label>
+        </settings>
+        <!-- <field name="location_address"  formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Address</label>
+                <dataScope>location_address</dataScope>
+            </settings>
+        </field>
+        <field name="location_phone"  formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Phone</label>
+                <dataScope>location_phone</dataScope>
+            </settings>
+        </field> -->
+    </fieldset>
+</form>

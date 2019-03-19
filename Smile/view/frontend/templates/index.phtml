@@ -1,0 +1,59 @@
+<p>Welcome to Pilot hello world extension</p>
+
+<style>
+.toggle-class-default{display:none;}
+</style>
+
+<a class="add-news-link">Add News</a>
+
+<div class="add_news_form toggle-class-default">
+<form action="/helloworld/index" method="POST" enctype='multipart/form-data'>
+    <table style="width:300px;">
+        <tr>
+            <td><input type="text" placeholder="News title" name="news_title" style="width:300px;"></td>
+        </tr>
+        <tr>
+            <td><textarea name="post_content" placeholder="News Description"></textarea></td>
+        </tr>
+        <tr>
+            <td><textarea name="tags" placeholder="News Tags"></textarea></td>
+        </tr>
+        <tr>
+            <td>Img : <input type="file" name="news_img"></td>
+        </tr>
+        <tr>
+            <td>
+            <input type="text" name="news_url" placeholder="News URL" style="width:250px;" >
+            <input type="hidden" name="action" value="add_news" />
+            </td>
+        </tr>
+    </table>
+    <input type="submit" name="submit" value="Add news">
+</form>
+</div>
+
+<table style="width:70%;" class="manage_rss_table">
+    <thead>
+        <th>News ID</th>
+        <th>News Title</th>
+        <th>News Description</th>
+        <th>News Image</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+    <?php foreach ($block->getNewsCollection() as $key=>$post){ ?>
+    <tr class="news-row-<?=$post->getNewsId();?>">
+        <td><?php echo $post->getNewsId();?></td>
+        <td><?php echo substr($post->getTitle(),0,30);?></td>
+        <td><?php echo substr($post->getPostContent(),0,30);?></td>
+        <td><img width="50" height="50" src="<?php echo $block->getMediaUrl();?><?php echo $post->getFeaturedImage();?>" width="" height=""></td>
+        <td>
+            <a data-news-id="<?php echo $post->getNewsId();?>" href="javascript:void(0)" class="edit_rss_link">Edit</a> | 
+            <a data-news-id="<?php echo $post->getNewsId();?>" href="javascript:void(0)" class="delete_rss_link">Delete</a>
+        </td>
+    </tr>
+    <?php } ?>
+    </tbody>
+</table>
+
+
