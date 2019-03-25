@@ -74,4 +74,21 @@
             </settings>
         </field>
     </fieldset>
+    <fieldset name="footer_settings">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Footer Settings</item>
+            </item>
+        </argument>
+        <settings>
+            <label translate="true">Footer Settings</label>
+        </settings>
+        <field name="footer_copyright_text"  formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Footer copyright text</label>
+                <dataScope>footer_copyright_text</dataScope>
+            </settings>
+        </field>
+    </fieldset>
 </form>

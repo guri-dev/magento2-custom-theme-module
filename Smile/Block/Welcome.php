@@ -3,25 +3,23 @@ namespace Pilot\Smile\Block;
  
 use Magento\Framework\View\Element\Template;
 
+
  
 class Welcome extends Template
 {
    /**
     * @var array|\Magento\Checkout\Block\Checkout\LayoutProcessorInterface[]
     */
-   protected $layoutProcessors;
-   protected $_dataOptions;
- 
+    
+    protected $adminCategoryTree;
+    
    public function __construct(
        Template\Context $context,
-       array $layoutProcessors = [],
        array $data = [],
-       \Pilot\Smile\Model\OptionsFactory  $options
+       \Magento\Catalog\Block\Adminhtml\Category\Tree $adminCategoryTree
    ) {
        parent::__construct($context, $data);
-       $this->jsLayout = isset($data['jsLayout']) && is_array($data['jsLayout']) ? $data['jsLayout'] : [];
-       $this->layoutProcessors = $layoutProcessors;
-       $this->_dataOptions = $options;
+       $this->adminCategoryTree = $adminCategoryTree;
    }
  
    public function getWelcome()
@@ -33,6 +31,11 @@ class Welcome extends Template
            );
        }
        return __($this->_data['welcome']);
+   }
+
+   public function getTree()
+   {
+        return $this->adminCategoryTree->getTree(); 
    }
     
 }
