@@ -64,6 +64,66 @@ class UpgradeSchema implements UpgradeSchemaInterface
 					\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
 				);
 			}
+			
+			// slide table
+			if (!$installer->tableExists('pilot_smile_slider')) {
+				$table = $installer->getConnection()->newTable(
+					$installer->getTable('pilot_smile_slider')
+				)
+					->addColumn(
+						'slide_id',
+						\Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+						null,
+						[
+							'identity' => true,
+							'nullable' => false,
+							'primary'  => true,
+							'unsigned' => true,
+						],
+						'Slide ID'
+					)
+					->addColumn(
+						'slide_title',
+						\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+						255,
+						['nullable => false'],
+						'Slide Title'
+					)
+					->addColumn(
+						'slide_description',
+						\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+						255,
+						[],
+						'Slide Description'
+					)
+					->addColumn(
+						'status',
+						\Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+						255,
+						[],
+						'Option Status'
+					)
+					->addColumn(
+						'slide_image',
+						\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+						255,
+						[],
+						'Slide Image'
+					)
+					->setComment('Slide table');
+				$installer->getConnection()->createTable($table);
+
+				$installer->getConnection()->addIndex(
+					$installer->getTable('pilot_smile_slider'),
+					$setup->getIdxName(
+						$installer->getTable('pilot_smile_slider'),
+						['slide_title','slide_description'],
+						\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
+					),
+					['slide_title','slide_description'],
+					\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
+				);
+			}
 		}
 
 		$installer->endSetup();

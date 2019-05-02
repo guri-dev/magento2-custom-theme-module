@@ -15,10 +15,10 @@
     <settings>
         <buttons>
             <button name="save_and_continue" class="Pilot\smile\Block\Adminhtml\Smile\SaveAndContinueButton"/>
-            <!--<button name="save" class="Guri\smile\Block\Adminhtml\Location\SaveButton"/>
-            <button name="reset" class="Guri\smile\Block\Adminhtml\Location\ResetButton"/>
-            <button name="delete" class="Guri\smile\Block\Adminhtml\Location\DeleteButton"/>
-            <button name="back" class="Guri\smile\Block\Adminhtml\Location\BackButton"/>-->
+            <button name="save" class="Pilot\Smile\Block\Adminhtml\Slider\SaveButton"/>
+            <button name="reset" class="Pilot\Smile\Block\Adminhtml\Slider\ResetButton"/>
+            <button name="delete" class="Pilot\Smile\Block\Adminhtml\Slider\DeleteButton"/>
+            <button name="back" class="Pilot\Smile\Block\Adminhtml\Slider\BackButton"/>
         </buttons>
         <layout>
             <navContainerName>left</navContainerName>

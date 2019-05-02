@@ -10,6 +10,7 @@ class Uninstall implements UninstallInterface
 		$installer = $setup;
 		$installer->startSetup();
 		$installer->getConnection()->dropTable($installer->getTable('pilot_smile_options'));
+		$installer->getConnection()->dropTable($installer->getTable('pilot_smile_slider'));
 		$installer->endSetup();
 	}
 }
