@@ -37,13 +37,12 @@ class Edit extends \Magento\Cms\Controller\Adminhtml\Block implements HttpGetAct
     public function execute()
     {
         // 1. Get ID and create model
-        $id = $this->getRequest()->getParam('slide_id');
+        $id = $this->getRequest()->getParam('id');
         $model = $this->_objectManager->create(\Magento\Cms\Model\Block::class);
-
         // 2. Initial checking
         if ($id) {
             $model->load($id);
-            if (!$model->getId()) {
+                if (!$model->getId()) { 
                 $this->messageManager->addErrorMessage(__('This slide no longer exists.'));
                 /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
