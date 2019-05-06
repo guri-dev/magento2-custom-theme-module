@@ -132,6 +132,66 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 				]
 		);
 
+		// home page banner table
+		if (!$installer->tableExists('pilot_smile_banner')) {
+			$table = $installer->getConnection()->newTable(
+				$installer->getTable('pilot_smile_banner')
+			)
+				->addColumn(
+					'banner_id',
+					\Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+					null,
+					[
+						'identity' => true,
+						'nullable' => false,
+						'primary'  => true,
+						'unsigned' => true,
+					],
+					'Banner ID'
+				)
+				->addColumn(
+					'banner_title',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					['nullable => false'],
+					'Banner Title'
+				)
+				->addColumn(
+					'banner_description',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					[],
+					'Banner Description'
+				)
+				->addColumn(
+					'status',
+					\Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+					255,
+					[],
+					'Option Status'
+				)
+				->addColumn(
+					'banner_image',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					[],
+					'Banner Image'
+				)
+				->setComment('Banner table');
+			$installer->getConnection()->createTable($table);
+
+			$installer->getConnection()->addIndex(
+				$installer->getTable('pilot_smile_banner'),
+				$setup->getIdxName(
+					$installer->getTable('pilot_smile_banner'),
+					['banner_title','banner_description'],
+					\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
+				),
+				['banner_title','banner_description'],
+				\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
+			);
+		}
+
 		$installer->endSetup();
 	}
 }

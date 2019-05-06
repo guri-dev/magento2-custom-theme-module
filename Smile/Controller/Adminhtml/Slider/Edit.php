@@ -38,7 +38,7 @@ class Edit extends \Magento\Cms\Controller\Adminhtml\Block implements HttpGetAct
     {
         // 1. Get ID and create model
         $id = $this->getRequest()->getParam('id');
-        $model = $this->_objectManager->create(\Magento\Cms\Model\Block::class);
+        $model = $this->_objectManager->create(\Pilot\Smile\Model\Slider::class);
         // 2. Initial checking
         if ($id) {
             $model->load($id);
@@ -50,7 +50,7 @@ class Edit extends \Magento\Cms\Controller\Adminhtml\Block implements HttpGetAct
             }
         }
 
-        $this->_coreRegistry->register('smile_slider', $model);
+        $this->_coreRegistry->register('pilot_smile_slider', $model);
 
         // 5. Build edit form
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
