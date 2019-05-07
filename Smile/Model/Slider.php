@@ -144,9 +144,8 @@ class Slider extends AbstractModel implements SliderInterface, IdentityInterface
     public function getSlideId()
     {
         return parent::getData(self::SLIDE_ID);
-	}
-
-
+    }
+    
     /**
      * Get identifier
      *
@@ -336,7 +335,7 @@ class Slider extends AbstractModel implements SliderInterface, IdentityInterface
      */
     public function setId($id)
     {
-        return $this->setData(self::PAGE_ID, $id);
+        return $this->setData(self::SLIDE_ID, $id);
     }
 
     /**
@@ -439,17 +438,7 @@ class Slider extends AbstractModel implements SliderInterface, IdentityInterface
         return $this->setData(self::CREATION_TIME, $creationTime);
     }
 
-    /**
-     * Set update time
-     *
-     * @param string $updateTime
-     * @return \Magento\Cms\Api\Data\PageInterface
-     */
-    public function setUpdateTime($updateTime)
-    {
-        return $this->setData(self::UPDATE_TIME, $updateTime);
-    }
-
+    
     /**
      * Set sort order
      *
@@ -547,9 +536,9 @@ class Slider extends AbstractModel implements SliderInterface, IdentityInterface
         $originalIdentifier = $this->getOrigData('identifier');
         $currentIdentifier = $this->getIdentifier();
 
-        if ($this->hasDataChanges()) {
-            $this->setUpdateTime(null);
-        }
+        // if ($this->hasDataChanges()) {
+        //     $this->setUpdateTime(null);
+        // }
 
         if (!$this->getId() || $originalIdentifier === $currentIdentifier) {
             return parent::beforeSave();

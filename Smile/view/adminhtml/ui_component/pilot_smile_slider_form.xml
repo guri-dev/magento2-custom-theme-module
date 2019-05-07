@@ -10,7 +10,8 @@
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">pilot_smile_slider_form.slider_form_data_source</item>
         </item>
-        <item name="label" xsi:type="string" translate="true">Slide Detail</item>
+        <item name="label" xsi:type="string" translate="true">Page Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
     <settings>
         <buttons>
@@ -19,10 +20,7 @@
             <button name="reset" class="Pilot\Smile\Block\Adminhtml\Slider\ResetButton"/>
             <button name="delete" class="Pilot\Smile\Block\Adminhtml\Slider\DeleteButton"/>
             <button name="back" class="Pilot\Smile\Block\Adminhtml\Slider\BackButton"/>
-        </buttons> 
-        <layout>
-            <type>tabs</type>
-        </layout>
+        </buttons>
         <namespace>pilot_smile_slider_form</namespace>
         <dataScope>data</dataScope>
         <deps>
@@ -45,15 +43,14 @@
             </settings>
         </dataProvider>
     </dataSource>
-    <fieldset name="general" sortOrder="10">
+    <fieldset name="general">
         <settings>
-            <collapsible>false</collapsible>
-            <label translate="true">General Information</label>
+            <label/>
         </settings>
         <field name="slide_id" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">general</item>
+                    <item name="source" xsi:type="string">slider</item>
                 </item>
             </argument>
             <settings>
@@ -65,7 +62,7 @@
         <field name="slide_title" sortOrder="10" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">general</item>
+                    <item name="source" xsi:type="string">slider</item>
                 </item>
             </argument>
             <settings>
@@ -73,14 +70,14 @@
                     <rule name="required-entry" xsi:type="boolean">true</rule>
                 </validation>
                 <dataType>text</dataType>
-                <label translate="true">Slide caption title</label>
+                <label translate="true">Slide Title</label>
                 <dataScope>slide_title</dataScope>
             </settings>
         </field>
         <field name="slide_description" sortOrder="20" formElement="textarea">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">general</item>
+                    <item name="source" xsi:type="string">slider</item>
                 </item>
             </argument>
             <settings>
@@ -88,7 +85,7 @@
                     <rule name="required-entry" xsi:type="boolean">true</rule>
                 </validation>
                 <dataType>text</dataType>
-                <label translate="true">Slide caption description</label>
+                <label translate="true">Slide description</label>
                 <dataScope>slide_description</dataScope>
             </settings>
         </field>
@@ -112,3 +109,4 @@
         </field>
     </fieldset>
 </form>
+

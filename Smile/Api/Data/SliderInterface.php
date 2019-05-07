@@ -237,14 +237,6 @@ interface SliderInterface
     public function setCreationTime($creationTime);
 
     /**
-     * Set update time
-     *
-     * @param string $updateTime
-     * @return \Magento\Cms\Api\Data\PageInterface
-     */
-    public function setUpdateTime($updateTime);
-
-    /**
      * Set sort order
      *
      * @param string $sortOrder

@@ -38,7 +38,10 @@ class Edit extends \Magento\Cms\Controller\Adminhtml\Block implements HttpGetAct
     {
         // 1. Get ID and create model
         $id = $this->getRequest()->getParam('slide_id');
+
+        
         $model = $this->_objectManager->create(\Pilot\Smile\Model\Slider::class);
+        
         // 2. Initial checking
         if ($id) {
             $model->load($id);
@@ -59,8 +62,9 @@ class Edit extends \Magento\Cms\Controller\Adminhtml\Block implements HttpGetAct
             $id ? __('Edit Slide') : __('Add New Slide'),
             $id ? __('Edit Slide') : __('Add New Slide')
         );
+
         $resultPage->getConfig()->getTitle()->prepend(__('Slide'));
-        $resultPage->getConfig()->getTitle()->prepend($model->getId() ? $model->getSlideTitle() : __('Add New Slide'));
+        $resultPage->getConfig()->getTitle()->prepend($model->getSlideId() ? $model->getSlideTitle() : __('Add New Slide'));
         return $resultPage;
     }
 }
