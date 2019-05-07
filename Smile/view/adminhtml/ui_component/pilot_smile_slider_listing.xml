@@ -19,7 +19,7 @@
             <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
             <argument name="name" xsi:type="string">pilot_smile_slider_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">slide_id</argument>
-            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">slide_id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
@@ -79,7 +79,7 @@
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">textRange</item>
                     <item name="sorting" xsi:type="string">asc</item>
-                    <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="label" xsi:type="string" translate="true">Slide ID</item>
                 </item>
             </argument>
         </column>

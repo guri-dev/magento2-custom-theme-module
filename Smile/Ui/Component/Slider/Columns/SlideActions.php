@@ -56,7 +56,7 @@ class SlideActions extends Column
                 $item[$this->getData('name')]['edit'] = [
                     'href' => $this->urlBuilder->getUrl(
                         'pilot_smile/slider/edit',
-                        ['id' => $item['slide_id'], 'store' => $storeId]
+                        ['slide_id' => $item['slide_id'], 'store' => $storeId]
                     ),
                     'label' => __('Edit'),
                     'hidden' => false,
