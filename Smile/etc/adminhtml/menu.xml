@@ -3,7 +3,8 @@
     <menu>
         <add id="Pilot_Smile::smile" title="Smile theme settings" module="Pilot_Smile" sortOrder="52" resource="Pilot_Smile::smile"/>
         <add id="Pilot_Smile::index" title="Theme options" module="Pilot_Smile" sortOrder="10" action="pilot_smile/options" resource="Pilot_Smile::smile" parent="Pilot_Smile::smile"/>
-        <add id="Pilot_Smile::slider" title="Home page slider" module="Pilot_Smile" sortOrder="10" action="pilot_smile/slider" resource="Pilot_Smile::smile" parent="Pilot_Smile::smile"/>
+        <add id="Pilot_Smile::slider" title="home page slider" module="Pilot_Smile" sortOrder="10" action="pilot_smile/slider" resource="Pilot_Smile::smile" parent="Pilot_Smile::smile"/>
+        <add id="Pilot_Smile::banner" title="home page banner" module="Pilot_Smile" sortOrder="10" action="pilot_smile/banner" resource="Pilot_Smile::smile" parent="Pilot_Smile::smile"/>
     </menu>
 </config>
 
