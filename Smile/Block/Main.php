@@ -12,6 +12,7 @@ class Main extends Template
     */
     
     protected $_dataSlides;
+    protected $_dataBanner;
     protected $_categoryCollectionFactory;
     protected $_categoryHelper;
     
@@ -20,12 +21,14 @@ class Main extends Template
        array $data = [],
        \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
         \Magento\Catalog\Helper\Category $categoryHelper,
-       \Pilot\Smile\Model\SliderFactory  $slides
+       \Pilot\Smile\Model\SliderFactory  $slides,
+       \Pilot\Smile\Model\BannerFactory  $banner
    ) {
        parent::__construct($context, $data);
        $this->_categoryCollectionFactory = $categoryCollectionFactory;
         $this->_categoryHelper = $categoryHelper;
        $this->_dataSlides = $slides;
+       $this->_dataBanner = $banner;
    }
 
    public function getCategoryCollection($isActive = true, $level = false, $sortBy = false, $pageSize = false)
@@ -73,6 +76,20 @@ class Main extends Template
        {
             return "no slide available";
        }
-       
+   }
+
+
+   public function getBanners()
+   {
+       $bannersModel = $this->_dataBanner->create();
+       $bannersList = $bannersModel->getCollection();
+       if(!empty($bannersList->getData()))
+       {
+            return $bannersList->getData();
+       }
+       else
+       {
+            return "no banners available";
+       }
    }
 }
