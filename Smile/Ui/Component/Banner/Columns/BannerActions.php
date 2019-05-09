@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Pilot\Smile\Ui\Component\Slider\Columns;
+namespace Pilot\Smile\Ui\Component\Banner\Columns;
 
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
@@ -16,7 +16,7 @@ use Magento\Framework\UrlInterface;
  * @api
  * @since 100.0.2
  */
-class SlideActions extends Column
+class BannerActions extends Column
 {
     /**
      * @var UrlInterface
@@ -55,8 +55,8 @@ class SlideActions extends Column
             foreach ($dataSource['data']['items'] as &$item) {
                 $item[$this->getData('name')]['edit'] = [
                     'href' => $this->urlBuilder->getUrl(
-                        'pilot_smile/slider/edit',
-                        ['slide_id' => $item['slide_id'], 'store' => $storeId]
+                        'pilot_smile/banner/edit',
+                        ['banner_id' => $item['banner_id'], 'store' => $storeId]
                     ),
                     'label' => __('Edit'),
                     'hidden' => false,

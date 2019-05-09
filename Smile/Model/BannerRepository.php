@@ -81,7 +81,7 @@ class BannerRepository implements BannerRepositoryInterface
      * @param CollectionProcessorInterface $collectionProcessor
      */
     public function __construct(
-        ResourceSlider $resource,
+        ResourceBanner $resource,
         BannerFactory $bannerFactory,
         \Pilot\Smile\Api\Data\BannerInterfaceFactory $dataBannerFactory,
         BannerCollectionFactory $bannerCollectionFactory,

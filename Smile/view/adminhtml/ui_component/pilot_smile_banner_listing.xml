@@ -92,7 +92,7 @@
                 <sortable>false</sortable>
             </settings>
         </column>
-        <actionsColumn name="actions" class="Pilot\Smile\Ui\Component\Banner\Columns\SlideActions" sortOrder="200">
+        <actionsColumn name="actions" class="Pilot\Smile\Ui\Component\Banner\Columns\BannerActions" sortOrder="200">
             <settings>
                 <indexField>banner_id</indexField>
             </settings>

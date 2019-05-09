@@ -325,7 +325,7 @@ class Banner extends AbstractModel implements BannerInterface, IdentityInterface
      */
     public function setId($id)
     {
-        return $this->setData(self::SLIDE_ID, $id);
+        return $this->setData(self::BANNER_ID, $id);
     }
 
     /**
