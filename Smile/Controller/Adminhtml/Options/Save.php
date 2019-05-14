@@ -36,16 +36,15 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
         $this->_filesystem = $filesystem;
         $this->dataPersistor = $dataPersistor;
         parent::__construct($context);
-        $this->optionsRepository = $optionsRepository
-            ?: \Magento\Framework\App\ObjectManager::getInstance()->get(OptionsRepositoryInterface::class);
+        $this->optionsRepository = $optionsRepository;
         $this->_dataOptions = $Options;
     }
 
 	public function execute()
 	{	
-        $model = $this->_dataSlider->create();
+        $model = $this->_dataOptions->create();
         
-        $option = $this->getRequest()->getParam('option_id');
+        $option_id = $this->getRequest()->getParam('option_id');
         $header_phone = $this->getRequest()->getParam('header_phone');
         $header_email = $this->getRequest()->getParam('header_email');
         $footer_about_us = $this->getRequest()->getParam('footer_about_us');
@@ -58,7 +57,7 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
 
 
         if ($option_id) {            
-            $collections = $this->_dataSlider->create()->getCollection()
+            $collections = $this->_dataOptions->create()->getCollection()
                  ->addFieldToFilter('option_id', array('eq' => $option_id));
             foreach($collections as $item)
             {

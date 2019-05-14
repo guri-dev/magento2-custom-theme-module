@@ -79,14 +79,14 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
         $items = $this->collection->getItems();
         /** @var $page \Magento\Cms\Model\Page */
         foreach ($items as $page) {
-            $this->loadedData[$page->getOptionsId()] = $page->getData();
+            $this->loadedData[$page->getOptionId()] = $page->getData();
         }
 
         $data = $this->dataPersistor->get('smile_pilot_options');
         if (!empty($data)) {
             $page = $this->collection->getNewEmptyItem();
             $page->setData($data);
-            $this->loadedData[$page->getOptionsId()] = $page->getData();
+            $this->loadedData[$page->getOptionId()] = $page->getData();
             $this->dataPersistor->clear('smile_pilot_options');
         }
         return $this->loadedData;

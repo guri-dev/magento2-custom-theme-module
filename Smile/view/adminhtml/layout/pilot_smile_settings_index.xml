@@ -2,7 +2,7 @@
     <update handle="styles"/>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="pilot_smile_settings_form"/>
+            <uiComponent name="pilot_smile_options_form"/>
         </referenceContainer>
     </body>
 </page>

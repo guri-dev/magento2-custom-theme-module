@@ -72,7 +72,7 @@
                 <dataScope>header_phone</dataScope>
             </settings>
         </field>
-        <field name="header_email" sortOrder="10" formElement="input">
+        <field name="header_email" sortOrder="11" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">options</item>
@@ -87,7 +87,7 @@
                 <dataScope>header_email</dataScope>
             </settings>
         </field>
-        <field name="footer_about_us" sortOrder="10" formElement="input">
+        <field name="footer_about_us" sortOrder="12" formElement="textarea">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">options</item>
@@ -102,7 +102,7 @@
                 <dataScope>footer_about_us</dataScope>
             </settings>
         </field>
-        <field name="footer_facebook" sortOrder="10" formElement="input">
+        <field name="footer_facebook" sortOrder="13" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">options</item>
@@ -117,7 +117,7 @@
                 <dataScope>footer_facebook</dataScope>
             </settings>
         </field>
-        <field name="footer_rss" sortOrder="10" formElement="input">
+        <field name="footer_rss" sortOrder="14" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">options</item>
@@ -132,7 +132,7 @@
                 <dataScope>footer_rss</dataScope>
             </settings>
         </field>
-        <field name="footer_email" sortOrder="10" formElement="input">
+        <field name="footer_email" sortOrder="15" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">options</item>
@@ -147,7 +147,7 @@
                 <dataScope>footer_email</dataScope>
             </settings>
         </field>
-        <field name="footer_pinterest" sortOrder="10" formElement="input">
+        <field name="footer_pinterest" sortOrder="16" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">options</item>
@@ -162,7 +162,7 @@
                 <dataScope>footer_pinterest</dataScope>
             </settings>
         </field>
-        <field name="footer_isntagram" sortOrder="10" formElement="input">
+        <field name="footer_isntagram" sortOrder="17" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">options</item>
@@ -173,11 +173,11 @@
                     <rule name="required-entry" xsi:type="boolean">true</rule>
                 </validation>
                 <dataType>text</dataType>
-                <label translate="true">Footer Isntagram</label>
+                <label translate="true">Footer Instagram</label>
                 <dataScope>footer_isntagram</dataScope>
             </settings>
         </field>
-        <field name="footer_twitter_handle" sortOrder="10" formElement="input">
+        <field name="footer_twitter_handle" sortOrder="18" formElement="input">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">options</item>
