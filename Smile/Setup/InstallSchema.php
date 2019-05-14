@@ -9,57 +9,6 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 		
 		$installer = $setup;
 		$installer->startSetup();
-		if (!$installer->tableExists('pilot_smile_options')) {
-			$table = $installer->getConnection()->newTable(
-				$installer->getTable('pilot_smile_options')
-			)
-				->addColumn(
-					'option_id',
-					\Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
-					null,
-					[
-						'identity' => true,
-						'nullable' => false,
-						'primary'  => true,
-						'unsigned' => true,
-					],
-					'Option ID'
-				)
-				->addColumn(
-					'option_name',
-					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-					255,
-					['nullable => false'],
-					'Option Name'
-				)
-				->addColumn(
-					'option_value',
-					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-					255,
-					[],
-					'Option Value'
-				)
-				->addColumn(
-					'status',
-					\Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
-					1,
-					[],
-					'Option Status'
-				)
-				->setComment('Option table');
-			$installer->getConnection()->createTable($table);
-
-			$installer->getConnection()->addIndex(
-				$installer->getTable('pilot_smile_options'),
-				$setup->getIdxName(
-					$installer->getTable('pilot_smile_options'),
-					['option_name','option_value'],
-					\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
-				),
-				['option_name','option_value'],
-				\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
-			);
-		}
 
 		// slider table
 		if (!$installer->tableExists('pilot_smile_slider')) {
@@ -188,6 +137,102 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 					\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
 				),
 				['banner_title','banner_description'],
+				\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
+			);
+		}
+
+		
+		// theme option
+		if (!$installer->tableExists('pilot_smile_options')) {
+			$table = $installer->getConnection()->newTable(
+				$installer->getTable('pilot_smile_options')
+			)
+				->addColumn(
+					'option_id',
+					\Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+					null,
+					[
+						'identity' => true,
+						'nullable' => false,
+						'primary'  => true,
+						'unsigned' => true,
+					],
+					'Option ID'
+				)
+				->addColumn(
+					'header_phone',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					['nullable => false'],
+					'Header phone'
+				)
+				->addColumn(
+					'header_email',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					['nullable => false'],
+					'Header email'
+				)
+				->addColumn(
+					'footer_about_us',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					['nullable => false'],
+					'Footer About Us'
+				)
+				->addColumn(
+					'footer_facebook',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					[],
+					'Footer facebook URL'
+				)
+				->addColumn(
+					'footer_rss',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					[],
+					'Footer RSS'
+				)
+				->addColumn(
+					'footer_email',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					[],
+					'Footer Email'
+				)
+				->addColumn(
+					'footer_pinterest',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					[],
+					'Footer Pinterest'
+				)
+				->addColumn(
+					'footer_isntagram',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					[],
+					'Footer Instagram'
+				)
+				->addColumn(
+					'footer_twitter_handle',
+					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+					255,
+					[],
+					'Footer Twitter handle'
+				)
+				->setComment('Theme options');
+			$installer->getConnection()->createTable($table);
+
+			$installer->getConnection()->addIndex(
+				$installer->getTable('pilot_smile_options'),
+				$setup->getIdxName(
+					$installer->getTable('pilot_smile_options'),
+					['footer_about_us','footer_facebook'],
+					\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
+				),
+				['footer_about_us','footer_facebook'],
 				\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
 			);
 		}

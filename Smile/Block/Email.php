@@ -26,8 +26,7 @@ class Email extends Template
    public function getEmail()
    {
         $locationModel = $this->_dataOptions->create();
-        $locationList = $locationModel->getCollection()
-							->addFieldToFilter('option_name', 'header_email');
+        $locationList = $locationModel->getCollection();
 	    $data  = $locationList->getData();
 		return  $data; exit;
    }

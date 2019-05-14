@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Pilot\Smile\Controller\Adminhtml\Smile;
+namespace Pilot\Smile\Controller\Adminhtml\Slider;
 
 use Magento\Framework\App\Action\HttpGetActionInterface as HttpGetActionInterface;
 
@@ -36,33 +36,35 @@ class Edit extends \Magento\Cms\Controller\Adminhtml\Block implements HttpGetAct
      */
     public function execute()
     {
-        
         // 1. Get ID and create model
-        $id = $this->getRequest()->getParam('location_id');
-        $model = $this->_objectManager->create(\Magento\Cms\Model\Block::class);
+        $id = $this->getRequest()->getParam('slide_id');
 
+        
+        $model = $this->_objectManager->create(\Pilot\Smile\Model\Slider::class);
+        
         // 2. Initial checking
         if ($id) {
             $model->load($id);
-            if (!$model->getId()) {
-                $this->messageManager->addErrorMessage(__('This location no longer exists.'));
+                if (!$model->getId()) { 
+                $this->messageManager->addErrorMessage(__('This slide no longer exists.'));
                 /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
                 return $resultRedirect->setPath('*/*/');
             }
         }
 
-        $this->_coreRegistry->register('storelocator_location', $model);
+        $this->_coreRegistry->register('pilot_smile_slider', $model);
 
         // 5. Build edit form
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $this->initPage($resultPage)->addBreadcrumb(
-            $id ? __('Edit Location') : __('Add New Location'),
-            $id ? __('Edit Location') : __('Add New Location')
+            $id ? __('Edit Slide') : __('Add New Slide'),
+            $id ? __('Edit Slide') : __('Add New Slide')
         );
-        $resultPage->getConfig()->getTitle()->prepend(__('Location'));
-        $resultPage->getConfig()->getTitle()->prepend($model->getId() ? $model->getTitle() : __('Add New Location'));
+
+        $resultPage->getConfig()->getTitle()->prepend(__('Slide'));
+        $resultPage->getConfig()->getTitle()->prepend($model->getSlideId() ? $model->getSlideTitle() : __('Add New Slide'));
         return $resultPage;
     }
 }

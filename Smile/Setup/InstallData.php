@@ -61,12 +61,12 @@ class InstallData implements InstallDataInterface
 		$smile->addData($data)->save();
 
 		// slider table
-		$slideData = [
-			'slide_title' => "This is first slide",
-			'slide_description' => "This is slide description",
-			'slide_link'       => 'http://google.com'
-		];
-		$slide = $this->_sliderFactory->create();
-		$slide->addData($slideData)->save();
+		// $slideData = [
+		// 	'slide_title' => "This is first slide",
+		// 	'slide_description' => "This is slide description",
+		// 	'slide_link'       => 'http://google.com'
+		// ];
+		// $slide = $this->_sliderFactory->create();
+		// $slide->addData($slideData)->save();
 	}
 }

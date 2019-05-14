@@ -1,6 +1,6 @@
 <?php
 
-namespace Pilot\Smile\Controller\Adminhtml\Options;
+namespace Pilot\Smile\Controller\Adminhtml\Slider;
 
 class Index extends \Magento\Backend\App\Action
 {
@@ -24,7 +24,7 @@ class Index extends \Magento\Backend\App\Action
             return $resultPage; 
         } catch(Exception $e)
         {
-            print_r($e); exit;
+            print_r($e); 
         }
 		
 	}

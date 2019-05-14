@@ -27,8 +27,7 @@ class Phone extends Template
    public function getPhone()
    {
         $locationModel = $this->_dataOptions->create();
-        $locationList = $locationModel->getCollection()
-							->addFieldToFilter('option_name', 'header_phone');
+        $locationList = $locationModel->getCollection();
 	    $data  = $locationList->getData();
 		return  $data; exit;
    }
