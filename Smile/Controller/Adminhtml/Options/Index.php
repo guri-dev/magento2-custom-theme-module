@@ -1,6 +1,6 @@
 <?php
 
-namespace Pilot\Smile\Controller\Adminhtml\Slider;
+namespace Pilot\Smile\Controller\Adminhtml\Options;
 
 class Index extends \Magento\Backend\App\Action
 {
@@ -20,7 +20,7 @@ class Index extends \Magento\Backend\App\Action
 		
         try{
 			$resultPage = $this->resultPageFactory->create();
-			$resultPage->getConfig()->getTitle()->prepend((__('Smile')));
+			$resultPage->getConfig()->getTitle()->prepend((__('Options')));
             return $resultPage; 
         } catch(Exception $e)
         {

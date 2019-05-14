@@ -1,10 +1,10 @@
 <?php
 
-namespace Pilot\Smile\Controller\Adminhtml\Slider;
+namespace Pilot\Smile\Controller\Adminhtml\Options;
 
-use Pilot\Smile\Model\SliderFactory;
-use Pilot\Smile\Model\Slider;
-use Pilot\Smile\Api\SliderRepositoryInterface;
+use Pilot\Smile\Model\OptionsFactory;
+use Pilot\Smile\Model\Options;
+use Pilot\Smile\Api\OptionsRepositoryInterface;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Filesystem;
 use Magento\Framework\App\Action\HttpPostActionInterface as HttpPostActionInterface;
@@ -14,21 +14,21 @@ use Magento\Framework\Exception\LocalizedException;
 
 class Save extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {	
-    protected $_dataSlider;
+    protected $_dataOptions;
     protected $_fileUploaderFactory;
     protected $uploaderFactory;
     protected $filesystem;
     protected $dataPersistor;
-    private $sliderRepository;
+    private $optionsRepository;
     
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
-        \Pilot\Smile\Model\SliderFactory  $Slider,
+        \Pilot\Smile\Model\OptionsFactory  $Options,
         \Magento\Framework\Image\AdapterFactory $adapterFactory,
         \Magento\Framework\Filesystem $filesystem,
         \Magento\MediaStorage\Model\File\UploaderFactory $uploaderFactory,
         \Magento\Framework\App\Request\DataPersistorInterface $dataPersistor,
-        SliderRepositoryInterface $sliderRepository = null
+        OptionsRepositoryInterface $optionsRepository = null
     )
     {
         $this->uploaderFactory = $uploaderFactory;
@@ -36,50 +36,68 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
         $this->_filesystem = $filesystem;
         $this->dataPersistor = $dataPersistor;
         parent::__construct($context);
-        $this->sliderRepository = $sliderRepository
-            ?: \Magento\Framework\App\ObjectManager::getInstance()->get(SliderRepositoryInterface::class);
-        $this->_dataSlider = $Slider;
+        $this->optionsRepository = $optionsRepository
+            ?: \Magento\Framework\App\ObjectManager::getInstance()->get(OptionsRepositoryInterface::class);
+        $this->_dataOptions = $Options;
     }
 
 	public function execute()
 	{	
         $model = $this->_dataSlider->create();
         
-        $slide_id = $this->getRequest()->getParam('slide_id');
-        $slide_title = $this->getRequest()->getParam('slide_title');
-        $slide_description = $this->getRequest()->getParam('slide_description');
-        $slider_image = $this->getRequest()->getParam('slider_image');
+        $option = $this->getRequest()->getParam('option_id');
+        $header_phone = $this->getRequest()->getParam('header_phone');
+        $header_email = $this->getRequest()->getParam('header_email');
+        $footer_about_us = $this->getRequest()->getParam('footer_about_us');
+        $footer_facebook = $this->getRequest()->getParam('footer_facebook');
+        $footer_rss = $this->getRequest()->getParam('footer_rss');
+        $footer_email = $this->getRequest()->getParam('footer_email');
+        $footer_pinterest = $this->getRequest()->getParam('footer_pinterest');
+        $footer_isntagram = $this->getRequest()->getParam('footer_isntagram');
+        $footer_twitter_handle = $this->getRequest()->getParam('footer_twitter_handle');
 
 
-        if ($slide_id) {            
+        if ($option_id) {            
             $collections = $this->_dataSlider->create()->getCollection()
-                 ->addFieldToFilter('slide_id', array('eq' => $slide_id));
+                 ->addFieldToFilter('option_id', array('eq' => $option_id));
             foreach($collections as $item)
             {
-                $item->setSlideTitle($slide_title);
-                $item->setSlideDescription($slide_description);
-                $item->setSlideImage(isset($slider_image[0]['url']) ? $slider_image[0]['url']:'');
+                $item->setHeaderPhone($header_phone);
+                $item->setHeaderEmail($header_email);
+                $item->setFooterAboutUs($footer_about_us);
+                $item->setFooterFacebook($footer_facebook);
+                $item->setFooterRss($footer_rss);
+                $item->setFooterEmail($footer_email);
+                $item->setFooterPinterest($footer_pinterest);
+                $item->setFooterIsntagram($footer_isntagram);
+                $item->setFooterTwitterHandle($footer_twitter_handle);
             }
             $saveData = $collections->save();
             if($saveData){
                 $this->messageManager->addSuccess( __('Record updated Successfully !') );
             }
-            $this->_redirect('pilot_smile/slider/index');
+            $this->_redirect('pilot_smile/options/index');
             
         }
         else
         {
             
             $model->addData([
-                "slide_title" => $slide_title,
-                "slide_description" => $slide_description,
-                "slide_image" => isset($slider_image[0]['url']) ? $slider_image[0]['url']:'',
+                "header_phone" => $header_phone,
+                "header_email" => $header_email,                
+                "footer_about_us" => $footer_about_us,                
+                "footer_facebook" => $footer_facebook,                
+                "footer_rss" => $footer_rss,                
+                "footer_email" => $footer_email,                
+                "footer_pinterest" => $footer_pinterest,                
+                "footer_isntagram" => $footer_isntagram,                
+                "footer_twitter_handle" => $footer_twitter_handle                
                 ]);
             $saveData = $model->save();
             if($saveData){
                 $this->messageManager->addSuccess( __('Insert Record Successfully !') );
             }
-            $this->_redirect('pilot_smile/slider/index');
+            $this->_redirect('pilot_smile/options/index');
         }
                 
 	}

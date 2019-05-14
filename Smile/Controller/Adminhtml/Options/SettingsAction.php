@@ -1,5 +1,5 @@
 <?php
-namespace Pilot\Smile\Controller\Adminhtml\Smile;
+namespace Pilot\Smile\Controller\Adminhtml\Options;
 use Magento\Backend\App\Action;
 /**
  * Class NewAction

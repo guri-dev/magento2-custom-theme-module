@@ -1,5 +1,5 @@
 <?php
-namespace Pilot\Smile\Controller\Adminhtml\Slider;
+namespace Pilot\Smile\Controller\Adminhtml\Options;
 
 class MassDelete extends \Magento\Backend\App\Action {
 
@@ -24,12 +24,12 @@ class MassDelete extends \Magento\Backend\App\Action {
             foreach ($logCollection as $item) {
                 $item->delete();
             }
-            $this->messageManager->addSuccess(__('Slide Deleted Successfully.'));
+            $this->messageManager->addSuccess(__('Options Deleted Successfully.'));
         }catch(Exception $e){
             $this->messageManager->addError($e->getMessage());
         }
         $resultRedirect = $this->resultRedirectFactory->create();
-        return $resultRedirect->setPath('pilot_smile/slider/index'); //Redirect Path
+        return $resultRedirect->setPath('pilot_smile/options/index'); //Redirect Path
     }
 
      /**
