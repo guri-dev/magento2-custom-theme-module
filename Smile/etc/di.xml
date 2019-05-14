@@ -1,11 +1,13 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
     <preference for="Pilot\Smile\Api\SliderRepositoryInterface" type="Pilot\Smile\Model\SliderRepository" />
     <preference for="Pilot\Smile\Api\BannerRepositoryInterface" type="Pilot\Smile\Model\BannerRepository" />
+    <preference for="Pilot\Smile\Api\OptionsRepositoryInterface" type="Pilot\Smile\Model\OptionsRepository" />
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
                 <item name="pilot_smile_slider_listing_data_source" xsi:type="string">Pilot\Smile\Model\ResourceModel\Slider\Grid\Collection</item>
                 <item name="pilot_smile_banner_listing_data_source" xsi:type="string">Pilot\Smile\Model\ResourceModel\Banner\Grid\Collection</item>
+                <item name="pilot_smile_options_listing_data_source" xsi:type="string">Pilot\Smile\Model\ResourceModel\Options\Grid\Collection</item>
             </argument>
         </arguments>
     </type>
@@ -19,6 +21,12 @@
         <arguments>
             <argument name="mainTable" xsi:type="string">pilot_smile_banner</argument>
             <argument name="resourceModel" xsi:type="string">Pilot\Smile\Model\ResourceModel\Banner</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Pilot\Smile\Model\ResourceModel\Options\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">pilot_smile_options</argument>
+            <argument name="resourceModel" xsi:type="string">Pilot\Smile\Model\ResourceModel\Options</argument>
         </arguments>
     </virtualType>
     <type name="Pilot\Smile\Model\ImageUploader">

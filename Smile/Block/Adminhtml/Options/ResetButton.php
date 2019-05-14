@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Guri\StoreLocator\Block\Adminhtml\Location;
+namespace Pilot\Smile\Block\Adminhtml\Options;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 

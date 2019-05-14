@@ -45,7 +45,7 @@ class SaveButton extends GenericButton implements ButtonProviderInterface
         $data = [];
         if ($canModify) {
             $data = [
-                'label' => __('Save Location'),
+                'label' => __('Save Banner'),
                 'class' => 'save primary',
                 'data_attribute' => [
                     'mage-init' => ['button' => ['event' => 'save']],

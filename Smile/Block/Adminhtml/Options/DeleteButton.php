@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Guri\StoreLocator\Block\Adminhtml\Location;
+namespace Pilot\Smile\Block\Adminhtml\Options;
 
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
@@ -63,6 +63,6 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
      */
     public function getDeleteUrl()
     {
-        return $this->getUrl('*/*/delete', ['id' => $this->getCustomerId()]);
+        return $this->getUrl('*/*/delete', ['option_id' => $this->getCustomerId()]);
     }
 }
