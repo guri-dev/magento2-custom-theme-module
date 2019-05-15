@@ -1,0 +1,789 @@
+<form action="http://local.magento.com/admin/admin/system_config/save/key/979a3325406b76592db5f1fef1fb67bb6d819fc88f512ce4992f271e909b44f8/section/web/" method="post" id="config-edit-form" enctype="multipart/form-data" novalidate="novalidate">
+    <div>
+        <input name="form_key" type="hidden" value="c3n2wgjIAD0sdxa0">
+    </div>
+    <div class="accordion">
+
+        <div class="entry-edit form-inline">
+            <div class="section-config">
+                <div class="entry-edit-head admin__collapsible-block"><span id="web_url-link" class="entry-edit-head-link"></span><a id="web_url-head" href="#web_url-link" onclick="Fieldset.toggleCollapse('web_url', 'http://local.magento.com/admin/admin/system_config/state/key/88221783da10fc3f5f57437aabd898eed1f4fcfe60d1b8743f76aee3f98d8fad/'); return false;" class="">Url Options</a></div>
+                <input id="web_url-state" name="config_state[web_url]" type="hidden" value="0">
+                <fieldset class="config admin__collapsible-block" id="web_url" style="display: none;">
+                    <legend>Url Options</legend>
+                    <table cellspacing="0" class="form-list">
+                        <colgroup class="label"></colgroup>
+                        <colgroup class="value"></colgroup>
+                        <colgroup class="scope-label"></colgroup>
+                        <colgroup class=""></colgroup>
+                        <tbody>
+                            <tr id="row_web_url_use_store">
+                                <td class="label">
+                                    <label for="web_url_use_store"><span data-config-scope="[GLOBAL]">Add Store Code to Urls</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_url_use_store" name="groups[url][fields][use_store][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-url-fields-use-store-value">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                    <p class="note"><span><strong style="color:red">Warning!</strong> When using Store Code in URLs, in some cases system may not work properly if URLs without Store Codes are specified in the third-party services (e.g. PayPal etc.).</span></p>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_url_use_store_inherit" name="groups[url][fields][use_store][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_url_use_store_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_url_redirect_to_base">
+                                <td class="label">
+                                    <label for="web_url_redirect_to_base"><span data-config-scope="[STORE VIEW]">Auto-redirect to Base URL</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_url_redirect_to_base" name="groups[url][fields][redirect_to_base][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-url-fields-redirect-to-base-value">
+                                        <option value="0">No</option>
+                                        <option value="1" selected="selected">Yes (302 Found)</option>
+                                        <option value="301">Yes (301 Moved Permanently)</option>
+                                    </select>
+                                    <p class="note"><span>I.e. redirect from http://example.com/store/ to http://www.example.com/store/</span></p>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_url_redirect_to_base_inherit" name="groups[url][fields][redirect_to_base][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_url_redirect_to_base_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    require(['prototype'], function() {
+                        Fieldset.applyCollapse('web_url');
+                    });
+                    //]]>
+                </script>
+            </div>
+            <div class="section-config active">
+                <div class="entry-edit-head admin__collapsible-block"><span id="web_seo-link" class="entry-edit-head-link"></span><a id="web_seo-head" href="#web_seo-link" onclick="Fieldset.toggleCollapse('web_seo', 'http://local.magento.com/admin/admin/system_config/state/key/88221783da10fc3f5f57437aabd898eed1f4fcfe60d1b8743f76aee3f98d8fad/'); return false;" class="open">Search Engine Optimization</a></div>
+                <input id="web_seo-state" name="config_state[web_seo]" type="hidden" value="1">
+                <fieldset class="config admin__collapsible-block" id="web_seo">
+                    <legend>Search Engine Optimization</legend>
+                    <table cellspacing="0" class="form-list">
+                        <colgroup class="label"></colgroup>
+                        <colgroup class="value"></colgroup>
+                        <colgroup class="scope-label"></colgroup>
+                        <colgroup class=""></colgroup>
+                        <tbody>
+                            <tr id="row_web_seo_use_rewrites">
+                                <td class="label">
+                                    <label for="web_seo_use_rewrites"><span data-config-scope="[STORE VIEW]">Use Web Server Rewrites</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_seo_use_rewrites" name="groups[seo][fields][use_rewrites][value]" class=" select admin__control-select" data-ui-id="select-groups-seo-fields-use-rewrites-value">
+                                        <option value="1" selected="selected">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_seo_use_rewrites_inherit" name="groups[seo][fields][use_rewrites][inherit]" type="checkbox" value="1" class="checkbox config-inherit" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_seo_use_rewrites_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    require(['prototype'], function() {
+                        Fieldset.applyCollapse('web_seo');
+                    });
+                    //]]>
+                </script>
+            </div>
+            <div class="section-config active">
+                <div class="entry-edit-head admin__collapsible-block"><span id="web_unsecure-link" class="entry-edit-head-link"></span><a id="web_unsecure-head" href="#web_unsecure-link" onclick="Fieldset.toggleCollapse('web_unsecure', 'http://local.magento.com/admin/admin/system_config/state/key/88221783da10fc3f5f57437aabd898eed1f4fcfe60d1b8743f76aee3f98d8fad/'); return false;" class="open">Base URLs</a></div>
+                <input id="web_unsecure-state" name="config_state[web_unsecure]" type="hidden" value="1">
+                <fieldset class="config admin__collapsible-block" id="web_unsecure">
+                    <legend>Base URLs</legend>
+                    <div class="comment">Any of the fields allow fully qualified URLs that end with '/' (slash) e.g. http://example.com/magento/</div>
+                    <table cellspacing="0" class="form-list">
+                        <colgroup class="label"></colgroup>
+                        <colgroup class="value"></colgroup>
+                        <colgroup class="scope-label"></colgroup>
+                        <colgroup class=""></colgroup>
+                        <tbody>
+                            <tr id="row_web_unsecure_base_url">
+                                <td class="label">
+                                    <label for="web_unsecure_base_url"><span data-config-scope="[STORE VIEW]">Base URL</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_unsecure_base_url" name="groups[unsecure][fields][base_url][value]" data-ui-id="text-groups-unsecure-fields-base-url-value" value="http://local.magento.com/" class=" input-text admin__control-text" type="text">
+                                    <p class="note"><span>Specify URL or  placeholder.</span></p>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_unsecure_base_link_url">
+                                <td class="label">
+                                    <label for="web_unsecure_base_link_url"><span data-config-scope="[STORE VIEW]">Base Link URL</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_unsecure_base_link_url" name="groups[unsecure][fields][base_link_url][value]" data-ui-id="text-groups-unsecure-fields-base-link-url-value" value="http://local.magento.com/" class=" input-text admin__control-text" disabled="disabled" type="text">
+                                    <p class="note"><span>May start with  placeholder.</span></p>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_unsecure_base_link_url_inherit" name="groups[unsecure][fields][base_link_url][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_unsecure_base_link_url_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_unsecure_base_static_url">
+                                <td class="label">
+                                    <label for="web_unsecure_base_static_url"><span data-config-scope="[STORE VIEW]">Base URL for Static View Files</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_unsecure_base_static_url" name="groups[unsecure][fields][base_static_url][value]" data-ui-id="text-groups-unsecure-fields-base-static-url-value" value="" class=" input-text admin__control-text" type="text">
+                                    <p class="note"><span>May be empty or start with  placeholder.</span></p>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_unsecure_base_media_url">
+                                <td class="label">
+                                    <label for="web_unsecure_base_media_url"><span data-config-scope="[STORE VIEW]">Base URL for User Media Files</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_unsecure_base_media_url" name="groups[unsecure][fields][base_media_url][value]" data-ui-id="text-groups-unsecure-fields-base-media-url-value" value="" class=" input-text admin__control-text" type="text">
+                                    <p class="note"><span>May be empty or start with  placeholder.</span></p>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    require(['prototype'], function() {
+                        Fieldset.applyCollapse('web_unsecure');
+                    });
+                    //]]>
+                </script>
+            </div>
+            <div class="section-config active">
+                <div class="entry-edit-head admin__collapsible-block"><span id="web_secure-link" class="entry-edit-head-link"></span><a id="web_secure-head" href="#web_secure-link" onclick="Fieldset.toggleCollapse('web_secure', 'http://local.magento.com/admin/admin/system_config/state/key/88221783da10fc3f5f57437aabd898eed1f4fcfe60d1b8743f76aee3f98d8fad/'); return false;" class="open">Base URLs (Secure)</a></div>
+                <input id="web_secure-state" name="config_state[web_secure]" type="hidden" value="1">
+                <fieldset class="config admin__collapsible-block" id="web_secure">
+                    <legend>Base URLs (Secure)</legend>
+                    <div class="comment">Any of the fields allow fully qualified URLs that end with '/' (slash) e.g. https://example.com/magento/</div>
+                    <table cellspacing="0" class="form-list">
+                        <colgroup class="label"></colgroup>
+                        <colgroup class="value"></colgroup>
+                        <colgroup class="scope-label"></colgroup>
+                        <colgroup class=""></colgroup>
+                        <tbody>
+                            <tr id="row_web_secure_base_url">
+                                <td class="label">
+                                    <label for="web_secure_base_url"><span data-config-scope="[STORE VIEW]">Secure Base URL</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_secure_base_url" name="groups[secure][fields][base_url][value]" data-ui-id="text-groups-secure-fields-base-url-value" value="http://local.magento.com/" class=" input-text admin__control-text" type="text">
+                                    <p class="note"><span>Specify URL or , or  placeholder.</span></p>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_secure_base_link_url">
+                                <td class="label">
+                                    <label for="web_secure_base_link_url"><span data-config-scope="[STORE VIEW]">Secure Base Link URL</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_secure_base_link_url" name="groups[secure][fields][base_link_url][value]" data-ui-id="text-groups-secure-fields-base-link-url-value" value="http://local.magento.com/" class=" input-text admin__control-text" disabled="disabled" type="text">
+                                    <p class="note"><span>May start with  or  placeholder.</span></p>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_secure_base_link_url_inherit" name="groups[secure][fields][base_link_url][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_secure_base_link_url_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_secure_base_static_url">
+                                <td class="label">
+                                    <label for="web_secure_base_static_url"><span data-config-scope="[STORE VIEW]">Secure Base URL for Static View Files</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_secure_base_static_url" name="groups[secure][fields][base_static_url][value]" data-ui-id="text-groups-secure-fields-base-static-url-value" value="" class=" input-text admin__control-text" type="text">
+                                    <p class="note"><span>May be empty or start with , or  placeholder.</span></p>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_secure_base_media_url">
+                                <td class="label">
+                                    <label for="web_secure_base_media_url"><span data-config-scope="[STORE VIEW]">Secure Base URL for User Media Files</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_secure_base_media_url" name="groups[secure][fields][base_media_url][value]" data-ui-id="text-groups-secure-fields-base-media-url-value" value="" class=" input-text admin__control-text" type="text">
+                                    <p class="note"><span>May be empty or start with , or  placeholder.</span></p>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_secure_use_in_frontend">
+                                <td class="label">
+                                    <label for="web_secure_use_in_frontend"><span data-config-scope="[STORE VIEW]">Use Secure URLs on Storefront</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_secure_use_in_frontend" name="groups[secure][fields][use_in_frontend][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-secure-fields-use-in-frontend-value">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                    <p class="note"><span>Enter https protocol to use Secure URLs on Storefront.</span></p>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_secure_use_in_frontend_inherit" name="groups[secure][fields][use_in_frontend][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_secure_use_in_frontend_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_secure_use_in_adminhtml">
+                                <td class="label">
+                                    <label for="web_secure_use_in_adminhtml"><span data-config-scope="[GLOBAL]">Use Secure URLs in Admin</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_secure_use_in_adminhtml" name="groups[secure][fields][use_in_adminhtml][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-secure-fields-use-in-adminhtml-value">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                    <p class="note"><span>Enter https protocol to use Secure URLs in Admin.</span></p>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_secure_use_in_adminhtml_inherit" name="groups[secure][fields][use_in_adminhtml][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_secure_use_in_adminhtml_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_secure_enable_hsts" style="display: none;">
+                                <td class="label ignore-validate">
+                                    <label for="web_secure_enable_hsts"><span data-config-scope="[STORE VIEW]">Enable HTTP Strict Transport Security (HSTS)</span></label>
+                                </td>
+                                <td class="value ignore-validate">
+                                    <select id="web_secure_enable_hsts" name="groups[secure][fields][enable_hsts][value]" class="select admin__control-select ignore-validate" data-ui-id="select-groups-secure-fields-enable-hsts-value" disabled="" style="display: none;">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                    <p class="note"><span>See <a href="https://www.owasp.org/index.php/HTTP_Strict_Transport_Security" target="_blank">HTTP Strict Transport Security</a> page for details.</span></p>
+                                </td>
+                                <td class="ignore-validate"></td>
+                            </tr>
+                            <tr id="row_web_secure_enable_upgrade_insecure" style="display: none;">
+                                <td class="label ignore-validate">
+                                    <label for="web_secure_enable_upgrade_insecure"><span data-config-scope="[STORE VIEW]">Upgrade Insecure Requests</span></label>
+                                </td>
+                                <td class="value ignore-validate">
+                                    <select id="web_secure_enable_upgrade_insecure" name="groups[secure][fields][enable_upgrade_insecure][value]" class="select admin__control-select ignore-validate" data-ui-id="select-groups-secure-fields-enable-upgrade-insecure-value" disabled="" style="display: none;">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                    <p class="note"><span>See <a href="http://www.w3.org/TR/upgrade-insecure-requests/" target="_blank">Upgrade Insecure Requests</a> page for details.</span></p>
+                                </td>
+                                <td class="ignore-validate"></td>
+                            </tr>
+                            <tr id="row_web_secure_offloader_header">
+                                <td class="label">
+                                    <label for="web_secure_offloader_header"><span data-config-scope="[GLOBAL]">Offloader header</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_secure_offloader_header" name="groups[secure][fields][offloader_header][value]" data-ui-id="text-groups-secure-fields-offloader-header-value" value="X-Forwarded-Proto" class=" input-text admin__control-text" disabled="disabled" type="text">
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_secure_offloader_header_inherit" name="groups[secure][fields][offloader_header][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_secure_offloader_header_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    require(['prototype'], function() {
+                        Fieldset.applyCollapse('web_secure');
+                    });
+                    //]]>
+                </script>
+            </div>
+            <div class="section-config active">
+                <div class="entry-edit-head admin__collapsible-block"><span id="web_default-link" class="entry-edit-head-link"></span><a id="web_default-head" href="#web_default-link" onclick="Fieldset.toggleCollapse('web_default', 'http://local.magento.com/admin/admin/system_config/state/key/88221783da10fc3f5f57437aabd898eed1f4fcfe60d1b8743f76aee3f98d8fad/'); return false;" class="open">Default Pages</a></div>
+                <input id="web_default-state" name="config_state[web_default]" type="hidden" value="1">
+                <fieldset class="config admin__collapsible-block" id="web_default">
+                    <legend>Default Pages</legend>
+                    <table cellspacing="0" class="form-list">
+                        <colgroup class="label"></colgroup>
+                        <colgroup class="value"></colgroup>
+                        <colgroup class="scope-label"></colgroup>
+                        <colgroup class=""></colgroup>
+                        <tbody>
+                            <tr id="row_web_default_front">
+                                <td class="label">
+                                    <label for="web_default_front"><span data-config-scope="[STORE VIEW]">Default Web URL</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_default_front" name="groups[default][fields][front][value]" data-ui-id="text-groups-default-fields-front-value" value="cms" class=" input-text admin__control-text" disabled="disabled" type="text">
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_default_front_inherit" name="groups[default][fields][front][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_default_front_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_default_cms_home_page">
+                                <td class="label">
+                                    <label for="web_default_cms_home_page"><span data-config-scope="[STORE VIEW]">CMS Home Page</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_default_cms_home_page" name="groups[default][fields][cms_home_page][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-default-fields-cms-home-page-value">
+                                        <option value="no-route">404 Not Found</option>
+                                        <option value="home" selected="selected">Home Page</option>
+                                        <option value="enable-cookies">Enable Cookies</option>
+                                        <option value="privacy-policy-cookie-restriction-mode">Privacy Policy</option>
+                                        <option value="about-us">About us</option>
+                                        <option value="customer-service">Customer Service</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_default_cms_home_page_inherit" name="groups[default][fields][cms_home_page][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_default_cms_home_page_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_default_no_route">
+                                <td class="label">
+                                    <label for="web_default_no_route"><span data-config-scope="[STORE VIEW]">Default No-route URL</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_default_no_route" name="groups[default][fields][no_route][value]" data-ui-id="text-groups-default-fields-no-route-value" value="cms/noroute/index" class=" input-text admin__control-text" disabled="disabled" type="text">
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_default_no_route_inherit" name="groups[default][fields][no_route][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_default_no_route_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_default_cms_no_route">
+                                <td class="label">
+                                    <label for="web_default_cms_no_route"><span data-config-scope="[STORE VIEW]">CMS No Route Page</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_default_cms_no_route" name="groups[default][fields][cms_no_route][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-default-fields-cms-no-route-value">
+                                        <option value="no-route" selected="selected">404 Not Found</option>
+                                        <option value="home">Home Page</option>
+                                        <option value="enable-cookies">Enable Cookies</option>
+                                        <option value="privacy-policy-cookie-restriction-mode">Privacy Policy</option>
+                                        <option value="about-us">About us</option>
+                                        <option value="customer-service">Customer Service</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_default_cms_no_route_inherit" name="groups[default][fields][cms_no_route][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_default_cms_no_route_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_default_cms_no_cookies">
+                                <td class="label">
+                                    <label for="web_default_cms_no_cookies"><span data-config-scope="[STORE VIEW]">CMS No Cookies Page</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_default_cms_no_cookies" name="groups[default][fields][cms_no_cookies][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-default-fields-cms-no-cookies-value">
+                                        <option value="no-route">404 Not Found</option>
+                                        <option value="home">Home Page</option>
+                                        <option value="enable-cookies" selected="selected">Enable Cookies</option>
+                                        <option value="privacy-policy-cookie-restriction-mode">Privacy Policy</option>
+                                        <option value="about-us">About us</option>
+                                        <option value="customer-service">Customer Service</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_default_cms_no_cookies_inherit" name="groups[default][fields][cms_no_cookies][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_default_cms_no_cookies_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_default_show_cms_breadcrumbs">
+                                <td class="label">
+                                    <label for="web_default_show_cms_breadcrumbs"><span data-config-scope="[STORE VIEW]">Show Breadcrumbs for CMS Pages</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_default_show_cms_breadcrumbs" name="groups[default][fields][show_cms_breadcrumbs][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-default-fields-show-cms-breadcrumbs-value">
+                                        <option value="1" selected="selected">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_default_show_cms_breadcrumbs_inherit" name="groups[default][fields][show_cms_breadcrumbs][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_default_show_cms_breadcrumbs_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    require(['prototype'], function() {
+                        Fieldset.applyCollapse('web_default');
+                    });
+                    //]]>
+                </script>
+            </div>
+            <div class="section-config">
+                <div class="entry-edit-head admin__collapsible-block"><span id="web_default_layouts-link" class="entry-edit-head-link"></span><a id="web_default_layouts-head" href="#web_default_layouts-link" onclick="Fieldset.toggleCollapse('web_default_layouts', 'http://local.magento.com/admin/admin/system_config/state/key/88221783da10fc3f5f57437aabd898eed1f4fcfe60d1b8743f76aee3f98d8fad/'); return false;" class="">Default Layouts</a></div>
+                <input id="web_default_layouts-state" name="config_state[web_default_layouts]" type="hidden" value="0">
+                <fieldset class="config admin__collapsible-block" id="web_default_layouts" style="display: none;">
+                    <legend>Default Layouts</legend>
+                    <table cellspacing="0" class="form-list">
+                        <colgroup class="label"></colgroup>
+                        <colgroup class="value"></colgroup>
+                        <colgroup class="scope-label"></colgroup>
+                        <colgroup class=""></colgroup>
+                        <tbody>
+                            <tr id="row_web_default_layouts_default_product_layout">
+                                <td class="label">
+                                    <label for="web_default_layouts_default_product_layout"><span data-config-scope="[GLOBAL]">Default Product Layout</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_default_layouts_default_product_layout" name="groups[default_layouts][fields][default_product_layout][value]" class=" select admin__control-select" data-ui-id="select-groups-default-layouts-fields-default-product-layout-value">
+                                        <option value="" selected="selected">No layout updates</option>
+                                        <option value="empty">Empty</option>
+                                        <option value="1column">1 column</option>
+                                        <option value="2columns-left">2 columns with left bar</option>
+                                        <option value="2columns-right">2 columns with right bar</option>
+                                        <option value="3columns">3 columns</option>
+                                        <option value="custom_home">Custom Home</option>
+                                    </select>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_default_layouts_default_category_layout">
+                                <td class="label">
+                                    <label for="web_default_layouts_default_category_layout"><span data-config-scope="[GLOBAL]">Default Category Layout</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_default_layouts_default_category_layout" name="groups[default_layouts][fields][default_category_layout][value]" class=" select admin__control-select" data-ui-id="select-groups-default-layouts-fields-default-category-layout-value">
+                                        <option value="" selected="selected">No layout updates</option>
+                                        <option value="empty">Empty</option>
+                                        <option value="1column">1 column</option>
+                                        <option value="2columns-left">2 columns with left bar</option>
+                                        <option value="2columns-right">2 columns with right bar</option>
+                                        <option value="3columns">3 columns</option>
+                                        <option value="custom_home">Custom Home</option>
+                                    </select>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_default_layouts_default_cms_layout">
+                                <td class="label">
+                                    <label for="web_default_layouts_default_cms_layout"><span data-config-scope="[GLOBAL]">Default Page Layout</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_default_layouts_default_cms_layout" name="groups[default_layouts][fields][default_cms_layout][value]" class=" select admin__control-select" data-ui-id="select-groups-default-layouts-fields-default-cms-layout-value">
+                                        <option value="empty">Empty</option>
+                                        <option value="1column" selected="selected">1 column</option>
+                                        <option value="2columns-left">2 columns with left bar</option>
+                                        <option value="2columns-right">2 columns with right bar</option>
+                                        <option value="3columns">3 columns</option>
+                                        <option value="custom_home">Custom Home</option>
+                                    </select>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    require(['prototype'], function() {
+                        Fieldset.applyCollapse('web_default_layouts');
+                    });
+                    //]]>
+                </script>
+            </div>
+            <div class="section-config">
+                <div class="entry-edit-head admin__collapsible-block"><span id="web_cookie-link" class="entry-edit-head-link"></span><a id="web_cookie-head" href="#web_cookie-link" onclick="Fieldset.toggleCollapse('web_cookie', 'http://local.magento.com/admin/admin/system_config/state/key/88221783da10fc3f5f57437aabd898eed1f4fcfe60d1b8743f76aee3f98d8fad/'); return false;" class="">Default Cookie Settings</a></div>
+                <input id="web_cookie-state" name="config_state[web_cookie]" type="hidden" value="0">
+                <fieldset class="config admin__collapsible-block" id="web_cookie" style="display: none;">
+                    <legend>Default Cookie Settings</legend>
+                    <table cellspacing="0" class="form-list">
+                        <colgroup class="label"></colgroup>
+                        <colgroup class="value"></colgroup>
+                        <colgroup class="scope-label"></colgroup>
+                        <colgroup class=""></colgroup>
+                        <tbody>
+                            <tr id="row_web_cookie_cookie_lifetime">
+                                <td class="label">
+                                    <label for="web_cookie_cookie_lifetime"><span data-config-scope="[STORE VIEW]">Cookie Lifetime</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_cookie_cookie_lifetime" name="groups[cookie][fields][cookie_lifetime][value]" data-ui-id="text-groups-cookie-fields-cookie-lifetime-value" value="3600" class=" input-text admin__control-text" disabled="disabled" type="text">
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_cookie_cookie_lifetime_inherit" name="groups[cookie][fields][cookie_lifetime][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_cookie_cookie_lifetime_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_cookie_cookie_path">
+                                <td class="label">
+                                    <label for="web_cookie_cookie_path"><span data-config-scope="[STORE VIEW]">Cookie Path</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_cookie_cookie_path" name="groups[cookie][fields][cookie_path][value]" data-ui-id="text-groups-cookie-fields-cookie-path-value" value="" class=" input-text admin__control-text" type="text">
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_cookie_cookie_domain">
+                                <td class="label">
+                                    <label for="web_cookie_cookie_domain"><span data-config-scope="[STORE VIEW]">Cookie Domain</span></label>
+                                </td>
+                                <td class="value">
+                                    <input id="web_cookie_cookie_domain" name="groups[cookie][fields][cookie_domain][value]" data-ui-id="text-groups-cookie-fields-cookie-domain-value" value="" class=" input-text admin__control-text" type="text">
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_cookie_cookie_httponly">
+                                <td class="label">
+                                    <label for="web_cookie_cookie_httponly"><span data-config-scope="[STORE VIEW]">Use HTTP Only</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_cookie_cookie_httponly" name="groups[cookie][fields][cookie_httponly][value]" class=" select admin__control-select" data-ui-id="select-groups-cookie-fields-cookie-httponly-value">
+                                        <option value="1" selected="selected">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                    <p class="note"><span><strong style="color:red">Warning</strong>:  Do not set to "No". User security could be compromised.</span></p>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_cookie_cookie_restriction">
+                                <td class="label">
+                                    <label for="web_cookie_cookie_restriction"><span data-config-scope="[WEBSITE]">Cookie Restriction Mode</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_cookie_cookie_restriction" name="groups[cookie][fields][cookie_restriction][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-cookie-fields-cookie-restriction-value">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_cookie_cookie_restriction_inherit" name="groups[cookie][fields][cookie_restriction][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_cookie_cookie_restriction_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    require(['prototype'], function() {
+                        Fieldset.applyCollapse('web_cookie');
+                    });
+                    //]]>
+                </script>
+            </div>
+            <div class="section-config">
+                <div class="entry-edit-head admin__collapsible-block"><span id="web_session-link" class="entry-edit-head-link"></span><a id="web_session-head" href="#web_session-link" onclick="Fieldset.toggleCollapse('web_session', 'http://local.magento.com/admin/admin/system_config/state/key/88221783da10fc3f5f57437aabd898eed1f4fcfe60d1b8743f76aee3f98d8fad/'); return false;" class="">Session Validation Settings</a></div>
+                <input id="web_session-state" name="config_state[web_session]" type="hidden" value="0">
+                <fieldset class="config admin__collapsible-block" id="web_session" style="display: none;">
+                    <legend>Session Validation Settings</legend>
+                    <table cellspacing="0" class="form-list">
+                        <colgroup class="label"></colgroup>
+                        <colgroup class="value"></colgroup>
+                        <colgroup class="scope-label"></colgroup>
+                        <colgroup class=""></colgroup>
+                        <tbody>
+                            <tr id="row_web_session_use_remote_addr">
+                                <td class="label">
+                                    <label for="web_session_use_remote_addr"><span data-config-scope="[GLOBAL]">Validate REMOTE_ADDR</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_session_use_remote_addr" name="groups[session][fields][use_remote_addr][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-session-fields-use-remote-addr-value">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_session_use_remote_addr_inherit" name="groups[session][fields][use_remote_addr][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_session_use_remote_addr_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_session_use_http_via">
+                                <td class="label">
+                                    <label for="web_session_use_http_via"><span data-config-scope="[GLOBAL]">Validate HTTP_VIA</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_session_use_http_via" name="groups[session][fields][use_http_via][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-session-fields-use-http-via-value">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_session_use_http_via_inherit" name="groups[session][fields][use_http_via][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_session_use_http_via_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_session_use_http_x_forwarded_for">
+                                <td class="label">
+                                    <label for="web_session_use_http_x_forwarded_for"><span data-config-scope="[GLOBAL]">Validate HTTP_X_FORWARDED_FOR</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_session_use_http_x_forwarded_for" name="groups[session][fields][use_http_x_forwarded_for][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-session-fields-use-http-x-forwarded-for-value">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_session_use_http_x_forwarded_for_inherit" name="groups[session][fields][use_http_x_forwarded_for][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_session_use_http_x_forwarded_for_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_session_use_http_user_agent">
+                                <td class="label">
+                                    <label for="web_session_use_http_user_agent"><span data-config-scope="[GLOBAL]">Validate HTTP_USER_AGENT</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_session_use_http_user_agent" name="groups[session][fields][use_http_user_agent][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-session-fields-use-http-user-agent-value">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_session_use_http_user_agent_inherit" name="groups[session][fields][use_http_user_agent][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_session_use_http_user_agent_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_session_use_frontend_sid">
+                                <td class="label">
+                                    <label for="web_session_use_frontend_sid"><span data-config-scope="[WEBSITE]">Use SID on Storefront</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_session_use_frontend_sid" name="groups[session][fields][use_frontend_sid][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-session-fields-use-frontend-sid-value">
+                                        <option value="1" selected="selected">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                    <p class="note"><span>Allows customers to stay logged in when switching between different stores.</span></p>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_session_use_frontend_sid_inherit" name="groups[session][fields][use_frontend_sid][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_session_use_frontend_sid_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    require(['prototype'], function() {
+                        Fieldset.applyCollapse('web_session');
+                    });
+                    //]]>
+                </script>
+            </div>
+            <div class="section-config">
+                <div class="entry-edit-head admin__collapsible-block"><span id="web_browser_capabilities-link" class="entry-edit-head-link"></span><a id="web_browser_capabilities-head" href="#web_browser_capabilities-link" onclick="Fieldset.toggleCollapse('web_browser_capabilities', 'http://local.magento.com/admin/admin/system_config/state/key/88221783da10fc3f5f57437aabd898eed1f4fcfe60d1b8743f76aee3f98d8fad/'); return false;" class="">Browser Capabilities Detection</a></div>
+                <input id="web_browser_capabilities-state" name="config_state[web_browser_capabilities]" type="hidden" value="0">
+                <fieldset class="config admin__collapsible-block" id="web_browser_capabilities" style="display: none;">
+                    <legend>Browser Capabilities Detection</legend>
+                    <table cellspacing="0" class="form-list">
+                        <colgroup class="label"></colgroup>
+                        <colgroup class="value"></colgroup>
+                        <colgroup class="scope-label"></colgroup>
+                        <colgroup class=""></colgroup>
+                        <tbody>
+                            <tr id="row_web_browser_capabilities_cookies">
+                                <td class="label">
+                                    <label for="web_browser_capabilities_cookies"><span data-config-scope="[STORE VIEW]">Redirect to CMS-page if Cookies are Disabled</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_browser_capabilities_cookies" name="groups[browser_capabilities][fields][cookies][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-browser-capabilities-fields-cookies-value">
+                                        <option value="1" selected="selected">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_browser_capabilities_cookies_inherit" name="groups[browser_capabilities][fields][cookies][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_browser_capabilities_cookies_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_browser_capabilities_javascript">
+                                <td class="label">
+                                    <label for="web_browser_capabilities_javascript"><span data-config-scope="[STORE VIEW]">Show Notice if JavaScript is Disabled</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_browser_capabilities_javascript" name="groups[browser_capabilities][fields][javascript][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-browser-capabilities-fields-javascript-value">
+                                        <option value="1" selected="selected">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_browser_capabilities_javascript_inherit" name="groups[browser_capabilities][fields][javascript][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_browser_capabilities_javascript_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                            <tr id="row_web_browser_capabilities_local_storage">
+                                <td class="label">
+                                    <label for="web_browser_capabilities_local_storage"><span data-config-scope="[STORE VIEW]">Show Notice if Local Storage is Disabled</span></label>
+                                </td>
+                                <td class="value">
+                                    <select id="web_browser_capabilities_local_storage" name="groups[browser_capabilities][fields][local_storage][value]" class=" select admin__control-select" disabled="disabled" data-ui-id="select-groups-browser-capabilities-fields-local-storage-value">
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected="selected">No</option>
+                                    </select>
+                                </td>
+                                <td class="use-default">
+                                    <input id="web_browser_capabilities_local_storage_inherit" name="groups[browser_capabilities][fields][local_storage][inherit]" type="checkbox" value="1" class="checkbox config-inherit" checked="checked" onclick="toggleValueElements(this, Element.previous(this.parentNode))">
+                                    <label for="web_browser_capabilities_local_storage_inherit" class="inherit">Use system value</label>
+                                </td>
+                                <td class=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    require(['prototype'], function() {
+                        Fieldset.applyCollapse('web_browser_capabilities');
+                    });
+                    //]]>
+                </script>
+            </div>
+        </div>
+        <script>
+            require(['mage/adminhtml/form'], function() {
+                new FormElementDependenceController({
+                    "web_secure_enable_hsts": {
+                        "web_secure_use_in_frontend": {
+                            "values": ["1"],
+                            "negative": false
+                        },
+                        "web_secure_use_in_adminhtml": {
+                            "values": ["1"],
+                            "negative": false
+                        }
+                    },
+                    "web_secure_enable_upgrade_insecure": {
+                        "web_secure_use_in_frontend": {
+                            "values": ["1"],
+                            "negative": false
+                        },
+                        "web_secure_use_in_adminhtml": {
+                            "values": ["1"],
+                            "negative": false
+                        }
+                    }
+                });
+            });
+        </script>
+    </div>
+</form>

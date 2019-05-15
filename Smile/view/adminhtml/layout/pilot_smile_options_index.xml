@@ -2,11 +2,12 @@
     <update handle="styles"/>
     <body>
         <referenceContainer name="content">
-            <!-- <uiComponent name="pilot_smile_options_index"/> -->
                 <referenceContainer name="js">
                     <block class="Magento\Backend\Block\Template" name="js.system_config_js" template="Magento_Config::system/config/js.phtml"/>
                 </referenceContainer>
-                <block name="system.config.edit" class="Magento\Config\Block\System\Config\Edit"/>
+                <referenceContainer name="content">
+                    <block class="Pilot\Smile\Block\Options" name="pilot.smile.options" template="Pilot_Smile::theme/options/settings.phtml" before="-"/>
+                </referenceContainer>
         </referenceContainer>
     </body>
 </page>
