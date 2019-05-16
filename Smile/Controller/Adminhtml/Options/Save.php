@@ -20,6 +20,8 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
     protected $filesystem;
     protected $dataPersistor;
     private $optionsRepository;
+
+    protected $_publicActions = ['save'];
     
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
@@ -42,6 +44,7 @@ class Save extends \Magento\Backend\App\Action implements HttpPostActionInterfac
 
 	public function execute()
 	{	
+        
         $model = $this->_dataOptions->create();
         
         $option_id = $this->getRequest()->getParam('option_id');

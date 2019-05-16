@@ -1,39 +1,121 @@
-<?php print_r($block->getOptions());?>
+<?php 
+$options = '';
+$options = $block->getOptions();
+?>
 
 <div class="accordion">
     <div class="entry-edit form-inline">
         <div class="section-config active">
         <div class="entry-edit-head admin__collapsible-block"><span id="web_default_layouts-link" class="entry-edit-head-link"></span>
-        <a id="web_default_layouts-head" href="#web_default_layouts-link" onclick="Fieldset.toggleCollapse('web_default_layouts', 'http://local.magento.com/admin/admin/system_config/state/key/88221783da10fc3f5f57437aabd898eed1f4fcfe60d1b8743f76aee3f98d8fad/'); return false;" class="">Header Settings</a></div>
-        <input id="web_default_layouts-state" name="config_state[web_default_layouts]" type="hidden" value="0">
-        <fieldset class="config admin__collapsible-block" id="web_default_layouts" style="display: none;">  <legend>Header settings</legend>
-            <table cellspacing="0" class="form-list">
-                <colgroup class="label"></colgroup>
-                <colgroup class="value"></colgroup>
-                <colgroup class="scope-label"></colgroup>
-                <colgroup class=""></colgroup>
-                <tbody>
-                    <tr id="row_web_default_layouts_default_cms_layout">
-                        <td class="label">
-                            <label for="header_phone"><span>Header Phone</span></label>
-                        </td>
-                        <td class="value">
-                            <input type="text" name="header_phone" value="asasasa" class="input-text admin__control-text" id="header_phone">
-                        </td>
-                        <td class=""></td>
-                    </tr>
-                    <tr id="row_web_default_layouts_default_cms_layout">
-                        <td class="label">
-                            <label for="header_email"><span>Header Email</span></label>
-                        </td>
-                        <td class="value">
-                            <input type="text" name="header_email" value="asasasa" class="input-text admin__control-text" id="header_email">
-                        </td>
-                        <td class=""></td>
-                    </tr>
-                </tbody>
-            </table>
-        </fieldset>      
-    </div>
+        </div>
+            <form name="save_theme_options" action="<?php echo $this->getUrl("pilot_smile/options/save"); ?>" method="post">
+
+            <input name="form_key" type="hidden" value="<?php echo $block->getFormKey() ?>" />
+            <input name="option_id" type="hidden" value="<?=!empty($options['option_id']) ? $options['option_id']:''?>" />
+            <fieldset class="config admin__collapsible-block" id="web_default_layouts" >
+                <h3>Header Settings</h3>
+                <table cellspacing="0" class="form-list">
+                    <colgroup class="label"></colgroup>
+                    <colgroup class="value"></colgroup>
+                    <colgroup class="scope-label"></colgroup>
+                    <colgroup class=""></colgroup>
+                    <tbody>
+                        <tr id="row_web_default_layouts_default_cms_layout">
+                            <td class="label">
+                                <label for="header_phone"><span>Header Phone</span></label>
+                            </td>
+                            <td class="value">
+                                <input type="text" name="header_phone" value="<?=!empty($options['header_phone']) ? $options['header_phone']:''?>" class="input-text admin__control-text" id="header_phone">
+                            </td>
+                            <td class=""></td>
+                        </tr>
+                        <tr id="row_web_default_layouts_default_cms_layout">
+                            <td class="label">
+                                <label for="header_email"><span>Header Email</span></label>
+                            </td>
+                            <td class="value">
+                                <input type="text" name="header_email" value="<?=!empty($options['header_email']) ? $options['header_email']:''?>" class="input-text admin__control-text" id="header_email">
+                            </td>
+                            <td class=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Footer Settings</h3>
+                <table cellspacing="0" class="form-list">
+                    <colgroup class="label"></colgroup>
+                    <colgroup class="value"></colgroup>
+                    <colgroup class="scope-label"></colgroup>
+                    <colgroup class=""></colgroup>
+                    <tbody>
+                        <tr >
+                            <td class="label">
+                                <label for="footer_about_us"><span>Footer about us</span></label>
+                            </td>
+                            <td class="value">
+                                <textarea name="footer_about_us" class="input-textarea admin__control-textarea" id="footer_about_us"><?=!empty($options['footer_about_us']) ? $options['footer_about_us']:''?></textarea>
+                            </td>
+                            <td class=""></td>
+                        </tr>
+                        <tr >
+                            <td class="label">
+                                <label for="footer_facebook"><span>Footer facebook link</span></label>
+                            </td>
+                            <td class="value">
+                                <input type="text" name="footer_facebook"  value="<?=!empty($options['footer_facebook']) ? $options['footer_facebook']:''?>"  class="input-text admin__control-text" id="footer_facebook">
+                            </td>
+                            <td class=""></td>
+                        </tr>
+                        <tr >
+                            <td class="label">
+                                <label for="footer_rss"><span>Footer RSS link</span></label>
+                            </td>
+                            <td class="value">
+                                <input type="text" name="footer_rss"  value="<?=!empty($options['footer_rss']) ? $options['footer_rss']:''?>"  class="input-text admin__control-text" id="footer_rss">
+                            </td>
+                            <td class=""></td>
+                        </tr>
+                        <tr >
+                            <td class="label">
+                                <label for="footer_email"><span>Footer email</span></label>
+                            </td>
+                            <td class="value">
+                                <input type="text" name="footer_email"  value="<?=!empty($options['footer_email']) ? $options['footer_email']:''?>"  class="input-text admin__control-text" id="footer_email">
+                            </td>
+                            <td class=""></td>
+                        </tr>
+                        <tr >
+                            <td class="label">
+                                <label for="footer_pinterest"><span>Footer pinterest</span></label>
+                            </td>
+                            <td class="value">
+                                <input type="text" name="footer_pinterest"  value="<?=!empty($options['footer_pinterest']) ? $options['footer_pinterest']:''?>"   class="input-text admin__control-text" id="footer_pinterest">
+                            </td>
+                            <td class=""></td>
+                        </tr>
+                        <tr >
+                            <td class="label">
+                                <label for="footer_isntagram"><span>Footer Isntagram</span></label>
+                            </td>
+                            <td class="value">
+                                <input type="text" name="footer_isntagram"  value="<?=!empty($options['footer_isntagram']) ? $options['footer_isntagram']:''?>"  class="input-text admin__control-text" id="footer_isntagram">
+                            </td>
+                            <td class=""></td>
+                        </tr>
+                        <tr >
+                            <td class="label">
+                                <label for="footer_twitter_handle"><span>Footer twitter handle</span></label>
+                            </td>
+                            <td class="value">
+                                <input type="text" name="footer_twitter_handle"  value="<?=!empty($options['footer_twitter_handle']) ? $options['footer_twitter_handle']:''?>"  class="input-text admin__control-text" id="footer_twitter_handle">
+                            </td>
+                            <td class=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="submit" name="submit" value="Save settings" >
+            </fieldset>   
+            </form>   
+        </div>
     </div>        
 </div>

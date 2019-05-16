@@ -27,7 +27,8 @@ class Options extends \Magento\Backend\Block\Widget
     public function getOptions()
     {
         $optionsModel = $this->optionsFactory->create();
-        $optionsList = $optionsModel->getCollection();
+        $optionsList = $optionsModel->getCollection();        
+        $optionsList = $optionsList->getFirstItem();
         if(!empty($optionsList->getData()))
         {
                 return $optionsList->getData();
@@ -36,8 +37,6 @@ class Options extends \Magento\Backend\Block\Widget
         {
                 return "no options available";
         }
-        
     }
-   
-    
+
 }
