@@ -39,4 +39,13 @@ class Options extends \Magento\Backend\Block\Widget
         }
     }
 
+    public function getTweets()
+    {
+        $optionsModel = $this->optionsFactory->create();
+        $optionsList = $optionsModel->getCollection();        
+        $optionsList = $optionsList->getFirstItem();
+        print_r($optionsList); die;
+       
+    }
+
 }

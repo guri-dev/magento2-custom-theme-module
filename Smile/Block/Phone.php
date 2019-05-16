@@ -10,7 +10,7 @@ class Phone extends Template
     * @var array|\Magento\Checkout\Block\Checkout\LayoutProcessorInterface[]
     */
    protected $layoutProcessors;
-   protected $_dataOptions;
+   protected $optionsFactory;
  
    public function __construct(
        Template\Context $context,
@@ -21,15 +21,22 @@ class Phone extends Template
        parent::__construct($context, $data);
        $this->jsLayout = isset($data['jsLayout']) && is_array($data['jsLayout']) ? $data['jsLayout'] : [];
        $this->layoutProcessors = $layoutProcessors;
-       $this->_dataOptions = $options;
+       $this->optionsFactory = $options;
    }
  
    public function getPhone()
    {
-        $locationModel = $this->_dataOptions->create();
-        $locationList = $locationModel->getCollection();
-	    $data  = $locationList->getData();
-		return  $data; exit;
+        $optionsModel = $this->optionsFactory->create();
+        $optionsList = $optionsModel->getCollection();        
+        $optionsList = $optionsList->getFirstItem();
+        if(!empty($optionsList->getData()))
+        {
+                return $optionsList->getData();
+        }
+        else
+        {
+                return "no options available";
+        }
    }
  
 }
