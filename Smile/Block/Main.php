@@ -15,6 +15,8 @@ class Main extends Template
     protected $_dataBanner;
     protected $_categoryCollectionFactory;
     protected $_categoryHelper;
+    protected $_productCollectionFactory;
+    protected $imageHelper;
     
    public function __construct(
        Template\Context $context,
@@ -22,12 +24,16 @@ class Main extends Template
        \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
         \Magento\Catalog\Helper\Category $categoryHelper,
        \Pilot\Smile\Model\SliderFactory  $slides,
+       \Magento\Catalog\Helper\Image $imageHelper,
+       \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
        \Pilot\Smile\Model\BannerFactory  $banner
    ) {
        parent::__construct($context, $data);
        $this->_categoryCollectionFactory = $categoryCollectionFactory;
         $this->_categoryHelper = $categoryHelper;
        $this->_dataSlides = $slides;
+       $this->_productCollectionFactory = $productCollectionFactory;    
+       $this->imageHelper = $imageHelper;
        $this->_dataBanner = $banner;
    }
 
@@ -62,6 +68,26 @@ class Main extends Template
    public function getStoreCategories($sorted = false, $asCollection = false, $toLoad = true)
     {
         return $this->_categoryHelper->getStoreCategories($sorted = false, $asCollection = false, $toLoad = true);
+    }
+
+    public function getProductCollection()
+    {
+        $collection = $this->_productCollectionFactory->create();
+        $collection->addAttributeToSelect('*');
+        $collection->addFieldToFilter('is_featured', 1);
+        $collection->setPageSize(2); 
+        return $collection;
+    }
+
+    public function getItemImage($productId)
+    {
+        try {
+            $_product = $this->_productCollectionFactory->getById($productId);
+        } catch (NoSuchEntityException $e) {
+            return 'product not found';
+        }
+        $image_url = $this->imageHelper->init($_product, 'product_base_image')->getUrl();
+        return $image_url;
     }
  
    public function getSlides()

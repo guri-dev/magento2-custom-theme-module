@@ -10,6 +10,7 @@ class Index extends \Magento\Framework\App\Action\Action
     protected $adapterFactory;
     protected $filesystem;
     protected $_dir;
+    protected $_productCollectionFactory;
 	
 	public function __construct(
 		\Magento\Framework\App\Action\Context $context,
@@ -18,13 +19,15 @@ class Index extends \Magento\Framework\App\Action\Action
         \Magento\Framework\Image\AdapterFactory $adapterFactory,
         \Magento\Framework\Filesystem $filesystem,
         ObjectManagerInterface $objectManager,
-        \Magento\Framework\Filesystem\DirectoryList $dir
+        \Magento\Framework\Filesystem\DirectoryList $dir,
+        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory
 		)
 	{
 		$this->_pageFactory = $pageFactory;
 		$this->uploaderFactory = $uploaderFactory;
         $this->adapterFactory = $adapterFactory;
         $this->filesystem = $filesystem;
+        $this->_productCollectionFactory = $productCollectionFactory;    
         $this->objectManager = $objectManager;
         $this->_dir = $dir;
 		return parent::__construct($context);
@@ -33,9 +36,8 @@ class Index extends \Magento\Framework\App\Action\Action
 	public function execute()
 	{   
 		return $this->_pageFactory->create();
-	}
-	
-	
+    }
+    	
 	public function upload_img()
 	{
         try{
