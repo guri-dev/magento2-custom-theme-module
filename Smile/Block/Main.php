@@ -82,11 +82,12 @@ class Main extends Template
     public function getItemImage($productId)
     {
         try {
-            $_product = $this->_productCollectionFactory->getById($productId);
+            $_product = $this->_productCollectionFactory->create()->load($productId);
         } catch (NoSuchEntityException $e) {
             return 'product not found';
         }
         $image_url = $this->imageHelper->init($_product, 'product_base_image')->getUrl();
+        print_r($image_url); die;
         return $image_url;
     }
  
