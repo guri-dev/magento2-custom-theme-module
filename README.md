@@ -2,6 +2,9 @@
 
 One Paragraph of project description goes here
 
+![alt text](https://camo.envatousercontent.com/80fcab03afdb41281db4a57b77c49ca786e7bc62/687474703a2f2f616c6f7468656d65732e636f6d2f7468656d65666f726573742f6465736372697074696f6e2f736d696c652e706e67)
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
