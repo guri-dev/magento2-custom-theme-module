@@ -87,7 +87,6 @@ class Main extends Template
             return 'product not found';
         }
         $image_url = $this->imageHelper->init($_product, 'product_base_image')->getUrl();
-        print_r($image_url); die;
         return $image_url;
     }
  

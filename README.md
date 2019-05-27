@@ -19,19 +19,25 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+How to install Magento 2 theme manually step by step?
+This is the most popular variant of theme installation. If your new theme is just a set of files, which you receive in a .zip folder, you will need to add the theme manually.
 
-Say what the step will be
+Step 1: Unzip the theme
+Unzip the archive of the theme and find two directories: app and pub.
 
-```
-Give the example
-```
+Step 2: Upload the files
 
-And repeat
+Navigate to the root directory of your Magento 2 store (use FileZilla or any other file manager). Upload the folders into the root directory.
 
-```
-until finished
-```
+Step 3: Use the commands
+Connect the store via SSH, go to the root directory and upgrade the set up using the commands: 
+php bin/magento setup:upgrade;
+php bin/magento setup:static-content:deploy.
+
+Step 4: Log in to the Admin Panel
+Go to the Content>Design>Configuration and choose Edit  the store theme
+
+Select the desired theme from the dropdown menu and click the Save Configuration button.
 
 End with an example of getting some data out of the system or using it for a little demo
 
