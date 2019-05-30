@@ -2,10 +2,11 @@
 namespace Pilot\Smile\Block;
  
 use Magento\Framework\View\Element\Template;
+use Magento\Catalog\Block\Product\AbstractProduct;
 
 
  
-class Main extends Template
+class Main extends AbstractProduct
 {
    /**
     * @var array|\Magento\Checkout\Block\Checkout\LayoutProcessorInterface[]
@@ -19,7 +20,7 @@ class Main extends Template
     protected $imageHelper;
     
    public function __construct(
-       Template\Context $context,
+       \Magento\Catalog\Block\Product\Context $context,
        array $data = [],
        \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
         \Magento\Catalog\Helper\Category $categoryHelper,
@@ -75,21 +76,10 @@ class Main extends Template
         $collection = $this->_productCollectionFactory->create();
         $collection->addAttributeToSelect('*');
         $collection->addFieldToFilter('is_featured', 1);
-        $collection->setPageSize(2); 
+        $collection->setPageSize(8); 
         return $collection;
     }
 
-    public function getItemImage($productId)
-    {
-        try {
-            $_product = $this->_productCollectionFactory->create()->load($productId);
-        } catch (NoSuchEntityException $e) {
-            return 'product not found';
-        }
-        $image_url = $this->imageHelper->init($_product, 'product_base_image')->getUrl();
-        return $image_url;
-    }
- 
    public function getSlides()
    {
        $slideModel = $this->_dataSlides->create();
