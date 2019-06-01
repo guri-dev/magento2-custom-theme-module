@@ -76,7 +76,7 @@ class Main extends AbstractProduct
         $collection = $this->_productCollectionFactory->create();
         $collection->addAttributeToSelect('*');
         $collection->addFieldToFilter('is_featured', 1);
-        $collection->setPageSize(8); 
+        $collection->setPageSize(12); 
         return $collection;
     }
 
