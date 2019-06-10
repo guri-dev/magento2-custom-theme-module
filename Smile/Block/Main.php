@@ -28,7 +28,7 @@ class Main extends AbstractProduct
        \Magento\Catalog\Helper\Image $imageHelper,
        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
        \Pilot\Smile\Model\BannerFactory  $banner
-   ) {
+   ) { 
        parent::__construct($context, $data);
        $this->_categoryCollectionFactory = $categoryCollectionFactory;
         $this->_categoryHelper = $categoryHelper;
